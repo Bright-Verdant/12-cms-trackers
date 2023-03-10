@@ -1,11 +1,9 @@
 
-DROP DATABASE IF EXISTS super_employee_db
+DROP DATABASE IF EXISTS super_employee_db;
 
-CREATE DATABASE super_employee_db
+CREATE DATABASE super_employee_db;
 
-USE super_employee_db
-
-
+USE super_employee_db;
 
 
 
@@ -37,3 +35,14 @@ CREATE TABLE employee (
   FOREIGN KEY (role_id) REFERENCES role (id),
   FOREIGN KEY (manager_id) REFERENCES employee (id)
 );
+
+
+
+
+CREATE TABLE manager (
+  id INT PRIMARY KEY,
+  employee_id INT,
+  FOREIGN KEY (employee_id) REFERENCES employee (id)
+);
+
+
